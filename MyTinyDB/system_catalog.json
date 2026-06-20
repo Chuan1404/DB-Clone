@@ -1,0 +1,26 @@
+{
+  "databases": {
+    "test": {
+      "created_at": "2026-06-20T20:21:13",
+      "tables": {
+        "user": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INT",
+              "size": 4
+            },
+            {
+              "name": "name",
+              "type": "CHAR",
+              "size": 10
+            }
+          ],
+          "record_count": 2,
+          "page_count": 1,
+          "created_at": "2026-06-20T20:21:34"
+        }
+      }
+    }
+  }
+}
