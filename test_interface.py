@@ -359,12 +359,11 @@ def interactive_menu(engine: dict):
 
     while True:
         print("\n" + "=" * 55)
-        print(" [*] Relational Database Storage Module Test (Stage 2+3)")
-        print("    Physical Slotted Page + Write-Ahead Logging (WAL)")
-        print("=" * 55)
+        print(" [*] Relational Database Storage Module Test" + "\n")
         print(f"  Current active database : {current_db if current_db else '(None)'}")
-        print("─" * 55)
+        print("-" * 55)
         print("  1.  Set Active Database / Initialize Environment")
+        print("-" * 20, "CRUD Operations", "-" * 20)
         print("  2.  Create Table")
         print("  3.  Insert Record  (Normal)")
         print("  4.  Insert Record  ([!!] Simulate Power Failure Crash)")
@@ -374,6 +373,7 @@ def interactive_menu(engine: dict):
         print("  8.  Compact Page")
         print("  9.  Show Table Stats")
         print("  10. Dump Page  (Hex Dump + Slot Status)")
+        print("-" * 20, "WAL Log", "-" * 20)
         print("  11. View WAL Log File  (wallog.txt)")
         print("  12. Run Disaster Recovery  (Manual Redo from WAL)")
         print("  13. Run Automated Test Suite")
@@ -383,7 +383,6 @@ def interactive_menu(engine: dict):
 
         choice = input("Please select a function: ").strip()
 
-        # ── 1. Set Active Database ──────────────────────────
         if choice == "1":
             db_name = input("Enter database name to create/select: ").strip()
             if not db_name:
@@ -396,7 +395,6 @@ def interactive_menu(engine: dict):
             current_db = db_name
             print(f"[OK] Active database set to '{current_db}'")
 
-        # ── 2. Create Table ─────────────────────────────────
         elif choice == "2":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -412,7 +410,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] Invalid columns format: {e}")
 
-        # ── 3. Insert Record (Normal) ────────────────────────
         elif choice == "3":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -430,7 +427,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 4. Insert Record (Crash Simulation) ─────────────
         elif choice == "4":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -449,7 +445,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 5. Select All ────────────────────────────────────
         elif choice == "5":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -460,7 +455,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 6. Update Record ─────────────────────────────────
         elif choice == "6":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -481,7 +475,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 7. Delete Record ─────────────────────────────────
         elif choice == "7":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -497,7 +490,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 8. Compact Page ──────────────────────────────────
         elif choice == "8":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -510,7 +502,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 9. Show Table Stats ──────────────────────────────
         elif choice == "9":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -521,7 +512,6 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 10. Dump Page ────────────────────────────────────
         elif choice == "10":
             if not current_db:
                 print("[ERROR] Please set an active database first (Option 1).")
@@ -542,22 +532,19 @@ def interactive_menu(engine: dict):
             except Exception as e:
                 print(f"[ERROR] {e}")
 
-        # ── 11. View WAL Log ─────────────────────────────────
         elif choice == "11":
             sm.view_wal(engine)
 
-        # ── 12. Manual Redo Recovery ─────────────────────────
         elif choice == "12":
             print("\n[RECOVERY] Running manual WAL Redo recovery...")
             sm.recover_from_wal(engine)
 
-        # ── 13. Test Suite ───────────────────────────────────
         elif choice == "13":
             run_test_suite(engine)
-        # ── 14. WAL Write-Ahead / Crash Recovery Scenario ────
+            
         elif choice == "14":
             run_wal_recovery_scenario(engine)
-        # ── 0. Exit ─────────────────────────────────────────
+            
         elif choice == "0":
             print("[INFO] Exiting. Goodbye!")
             break
