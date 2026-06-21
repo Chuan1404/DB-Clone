@@ -1,7 +1,7 @@
 {
   "databases": {
     "test": {
-      "created_at": "2026-06-20T20:21:13",
+      "created_at": "2026-06-21T14:56:23",
       "tables": {
         "user": {
           "columns": [
@@ -18,7 +18,124 @@
           ],
           "record_count": 2,
           "page_count": 1,
-          "created_at": "2026-06-20T20:21:34"
+          "created_at": "2026-06-21T14:56:38"
+        }
+      }
+    },
+    "db_alpha": {
+      "created_at": "2026-06-21T15:20:41",
+      "tables": {
+        "customers": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INT",
+              "size": 10
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR",
+              "size": 50
+            }
+          ],
+          "record_count": 5,
+          "page_count": 1,
+          "created_at": "2026-06-21T15:20:41"
+        },
+        "orders": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INT",
+              "size": 10
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR",
+              "size": 50
+            }
+          ],
+          "record_count": 2,
+          "page_count": 1,
+          "created_at": "2026-06-21T15:20:41"
+        }
+      }
+    },
+    "db_bravo": {
+      "created_at": "2026-06-21T15:20:41",
+      "tables": {
+        "customers": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INT",
+              "size": 10
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR",
+              "size": 50
+            }
+          ],
+          "record_count": 2,
+          "page_count": 1,
+          "created_at": "2026-06-21T15:20:41"
+        },
+        "orders": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INT",
+              "size": 10
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR",
+              "size": 50
+            }
+          ],
+          "record_count": 2,
+          "page_count": 1,
+          "created_at": "2026-06-21T15:20:41"
+        }
+      }
+    },
+    "db_charlie": {
+      "created_at": "2026-06-21T15:20:41",
+      "tables": {
+        "customers": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INT",
+              "size": 10
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR",
+              "size": 50
+            }
+          ],
+          "record_count": 2,
+          "page_count": 1,
+          "created_at": "2026-06-21T15:20:41"
+        },
+        "orders": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INT",
+              "size": 10
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR",
+              "size": 50
+            }
+          ],
+          "record_count": 2,
+          "page_count": 1,
+          "created_at": "2026-06-21T15:20:41"
         }
       }
     }
